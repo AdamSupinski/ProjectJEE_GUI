@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="186.0" prefWidth="333.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jeeclasses.movierental.jfxclient.controller.MovieAddDialogController">
+   <children>
+      <Button fx:id="addButton" defaultButton="true" layoutX="124.0" layoutY="144.0" mnemonicParsing="false" onAction="#handleAdd" text="Dodaj film" />
+      <Label fx:id="titleLabel" alignment="CENTER" layoutX="7.0" layoutY="7.0" prefHeight="15.0" prefWidth="280.0" text="Dodaj nowy film" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="51.0" layoutY="45.0" prefHeight="74.0" prefWidth="303.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0">
+         <children>
+            <Label text="Rok premiery" GridPane.rowIndex="1" />
+            <Label text="Tytuł filmu" />
+            <TextField fx:id="titleTextField" GridPane.columnIndex="1" />
+            <TextField fx:id="releaseYearTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+         </children>
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="99.0" minWidth="10.0" prefWidth="85.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="250.0" minWidth="10.0" prefWidth="125.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

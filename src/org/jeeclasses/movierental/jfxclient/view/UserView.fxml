@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jeeclasses.movierental.jfxclient.controller.UserViewController">
+    <children>
+        <TableView fx:id="moviesTable" layoutY="66.0" prefHeight="335.0" prefWidth="600.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
+            <columns>
+                <TableColumn fx:id="titleColumn" editable="false" prefWidth="200.0" text="Tytuł" />
+                <TableColumn fx:id="releaseYearColumn" editable="false" prefWidth="117.0" text="Rok wydania" />
+                <TableColumn fx:id="statusColumn" editable="false" prefWidth="149.0" text="Status" />
+            </columns>
+            <columnResizePolicy>
+                <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+            </columnResizePolicy>
+        </TableView>
+        <GridPane layoutX="25.0" layoutY="23.0" prefHeight="30.0" prefWidth="545.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="95.0" text="Dodaj" />
+                <Button fx:id="editButton" mnemonicParsing="false" onAction="#handleEdit" prefWidth="95.0" text="Edytuj" GridPane.columnIndex="1" />
+                <Button fx:id="removeButton" mnemonicParsing="false" onAction="#handleRemove" prefWidth="95.0" text="Usuń" GridPane.columnIndex="2" />
+                <Button fx:id="detailsButton" mnemonicParsing="false" onAction="#handleDetails" prefWidth="95.0" text="Szczegóły" GridPane.columnIndex="3" />
+                <Button fx:id="rentButton" mnemonicParsing="false" onAction="#handleRent" prefHeight="25.0" prefWidth="95.0" text="Wypożycz " GridPane.columnIndex="4" />
+            </children>
+        </GridPane>
+    </children>
+</AnchorPane>
