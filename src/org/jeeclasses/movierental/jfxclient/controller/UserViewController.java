@@ -137,7 +137,22 @@ public class UserViewController {
 
     @FXML
     private void handleRent() {
-        //TODO wypożyczenie zostawiam Tobie, brak mi "infrastruktury
+        ObservableList<ObservableMovie> selection = moviesTable.getSelectionModel().getSelectedItems();
+
+        if (selection.isEmpty() || selection.equals(null)) {
+            // Nothing selected
+            showAlertNoMoviesSelected();
+            return;
+        }
+
+        if (selection.size() != 1) {
+            // Selected 2 or more rows
+            showAlertTooManyMoviesSelected();
+            return;
+        }
+
+        mainApp.showMovieRentDialog(selection.get(0));
+
     }
 
     public void showAlertNoMoviesSelected() {

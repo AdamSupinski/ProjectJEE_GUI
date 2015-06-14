@@ -180,6 +180,37 @@ public class MainApp extends Application {
         }
     }
 
+    public void showMovieRentDialog(ObservableMovie movie) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/MovieRentDialog.fxml"));
+            AnchorPane page = loader.load();
+
+            // Create the dialog Stage.
+            Stage dialogStage = new Stage();
+            dialogStage.setTitle("Wypożyczanie filmu: " + movie.getTitle().toString());
+            dialogStage.initModality(Modality.WINDOW_MODAL);
+            dialogStage.initOwner(primaryStage);
+            dialogStage.setResizable(false);
+            Scene scene = new Scene(page);
+            dialogStage.setScene(scene);
+
+            // Set the person into the controller.
+            MovieRentDialogController controller = loader.getController();
+            controller.setMainApp(this);
+            controller.setDialogStage(dialogStage);
+            controller.setMovie(movie);
+
+            // Show the dialog and wait until the user closes it
+            dialogStage.showAndWait();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
+
     public Stage getPrimaryStage() {
         return primaryStage;
     }
@@ -195,5 +226,7 @@ public class MainApp extends Application {
     public UserViewController getUserViewController() {
         return userViewController;
     }
+
+
 }
 
