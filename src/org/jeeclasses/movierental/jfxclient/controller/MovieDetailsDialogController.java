@@ -47,9 +47,9 @@ public class MovieDetailsDialogController {
 
     public void showDetails() {
         if(this.movie!=null && this.mainApp!=null && this.mainApp.getCustomer()!=null) {
-            titleLabel.setText(String.valueOf(movie.getTitle()));
-            releaseYearLabel.setText(String.valueOf(movie.getReleaseYear()));
-            statusLabel.setText(String.valueOf(movie.getStatus()));
+            titleLabel.setText(movie.getTitle().getValue().toString());
+            releaseYearLabel.setText(movie.getReleaseYear().getValue().toString());
+            statusLabel.setText(movie.getStatus().toString());
 
             if(movie.getStatus() == MovieStatus.AVAILABLE) {
                 statusLabel.setTextFill(Color.GREEN);

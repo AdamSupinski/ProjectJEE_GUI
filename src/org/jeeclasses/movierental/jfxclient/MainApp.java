@@ -25,7 +25,9 @@ public class MainApp extends Application {
     private Customer customer;
     private UserViewController userViewController;
 
-
+    public static void main(String[] args) {
+        launch(args);
+    }
 
     @Override
     public void start(Stage primaryStage) {
@@ -41,7 +43,7 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/RootLayout.fxml"));
-            rootLayout = (BorderPane) loader.load();
+            rootLayout = loader.load();
 
             Scene scene = new Scene(rootLayout);
             primaryStage.setScene(scene);
@@ -55,7 +57,7 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/LoginView.fxml"));
-            AnchorPane loginView = (AnchorPane) loader.load();
+            AnchorPane loginView = loader.load();
 
             rootLayout.setCenter(loginView);
 
@@ -71,7 +73,7 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/UserView.fxml"));
-            AnchorPane userView = (AnchorPane) loader.load();
+            AnchorPane userView = loader.load();
 
             rootLayout.setCenter(userView);
 
@@ -88,11 +90,11 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/MovieDetailsDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Szczegóły filmu: " + movie.getTitle());
+            dialogStage.setTitle("Szczegóły filmu: " + movie.getTitle().toString());
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             dialogStage.setResizable(false);
@@ -120,7 +122,7 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/MovieAddDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
@@ -150,11 +152,11 @@ public class MainApp extends Application {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/MovieEditDialog.fxml"));
-            AnchorPane page = (AnchorPane) loader.load();
+            AnchorPane page = loader.load();
 
             // Create the dialog Stage.
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edycja filmu: " + movie.getTitle());
+            dialogStage.setTitle("Edycja filmu: " + movie.getTitle().toString());
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
             dialogStage.setResizable(false);
@@ -192,10 +194,6 @@ public class MainApp extends Application {
 
     public UserViewController getUserViewController() {
         return userViewController;
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }
 

@@ -1,5 +1,7 @@
 package org.jeeclasses.movierental.jfxclient.controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
@@ -34,8 +36,8 @@ public class MovieEditDialogController {
 
     public void setDetails() {
         if(this.movie!=null && this.mainApp!=null && this.mainApp.getCustomer()!=null) {
-            titleTextField.setText(String.valueOf(movie.getTitle()));
-            releaseYearTextField.setText(String.valueOf(movie.getReleaseYear()));
+            titleTextField.setText(movie.getTitle().getValue().toString());
+            releaseYearTextField.setText(movie.getReleaseYear().getValue().toString());
         }
     }
 
@@ -51,12 +53,14 @@ public class MovieEditDialogController {
             alert.showAndWait();
             return;
         }
-        mainApp.getUserViewController().getMoviesTable().getItems().remove(movie);
-
         this.movie.setTitle(titleTextField.getText());
         this.movie.setReleaseYear(Integer.parseInt(releaseYearTextField.getText()));
+        //refreshing TableView to show updated items
+        ObservableList<ObservableMovie> list = FXCollections.observableArrayList(mainApp.getUserViewController().getMoviesTable().getItems());
 
-        mainApp.getUserViewController().getMoviesTable().getItems().add(movie);
+        mainApp.getUserViewController().getMoviesTable().getItems().removeAll(list);
+
+        mainApp.getUserViewController().getMoviesTable().setItems(list);
 
         //TODO save changes in DB
 
@@ -72,8 +76,6 @@ public class MovieEditDialogController {
             return false;
         }
 
-        if(year<=1900 || year > 2015) return false;
-        else
-            return true;
+        return !(year <= 1900 || year > 2015);
     }
 }
