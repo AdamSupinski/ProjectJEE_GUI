@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="380.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="org.jeeclasses.movierental.jfxclient.controller.RegisterViewController">
+    <children>
+        <GridPane layoutX="7.0" layoutY="66.0" prefHeight="209.0" prefWidth="286.0" AnchorPane.leftAnchor="7.0"
+                  AnchorPane.rightAnchor="7.0">
+            <children>
+                <Label text="Email (login)"/>
+                <Label text="Hasło" GridPane.rowIndex="1"/>
+                <TextField fx:id="emailTextField" prefHeight="25.0" prefWidth="162.0" GridPane.columnIndex="1"/>
+                <Label text="Powtórz hasło" GridPane.rowIndex="2"/>
+                <TextField fx:id="nameTextField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label text="Imię i nazwisko" GridPane.rowIndex="3"/>
+                <Label text="Adres" GridPane.rowIndex="4"/>
+                <Label text="Kod pocztowy" GridPane.rowIndex="5"/>
+                <Label text="Miasto" GridPane.rowIndex="6"/>
+                <TextField fx:id="addressTextField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <TextField fx:id="postcodeTextField" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                <TextField fx:id="cityTextField" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                <PasswordField fx:id="confirmPasswordTextField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <PasswordField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </children>
+            <columnConstraints>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="119.0" minWidth="10.0"
+                                   prefWidth="113.0"/>
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0"
+                                   prefWidth="104.0"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES"/>
+            </rowConstraints>
+        </GridPane>
+        <Label alignment="CENTER" layoutX="35.0" layoutY="7.0" prefHeight="16.0" prefWidth="257.0"
+               text="REJESTRACJA UŻYTKOWNIKA" textAlignment="CENTER" AnchorPane.leftAnchor="15.0"
+               AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="5.0">
+            <font>
+                <Font name="System Bold" size="13.0"/>
+            </font>
+        </Label>
+        <Label fx:id="registerErrorLabel" alignment="CENTER" layoutX="15.0" layoutY="34.0" prefHeight="32.0"
+               prefWidth="270.0" text=" " textFill="#dd0b0b" wrapText="true" AnchorPane.leftAnchor="15.0"
+               AnchorPane.rightAnchor="15.0"/>
+        <Button fx:id="registerButton" defaultButton="true" layoutX="61.0" layoutY="336.0" mnemonicParsing="false"
+                onAction="#handleRegister" text="Zarejestruj"/>
+        <Button fx:id="returnButton" layoutX="164.0" layoutY="336.0" mnemonicParsing="false" onAction="#handleReturn"
+                text="Powrót "/>
+    </children>
+</AnchorPane>

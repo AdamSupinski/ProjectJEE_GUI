@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jeeclasses.movierental.jfxclient.controller.LoginViewController">
+<?import javafx.scene.text.Font?>
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="org.jeeclasses.movierental.jfxclient.controller.LoginViewController">
     <children>
         <GridPane layoutX="46.0" layoutY="57.0" prefHeight="75.0" prefWidth="218.0" AnchorPane.leftAnchor="46.0" AnchorPane.rightAnchor="54.0">
             <columnConstraints>
@@ -20,7 +20,7 @@
                 <Label text="Login" />
                 <Label text="Hasło" GridPane.rowIndex="1" />
                 <TextField fx:id="loginTextField" prefHeight="25.0" prefWidth="162.0" GridPane.columnIndex="1" />
-                <TextField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <PasswordField fx:id="passwordTextField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
             </children>
         </GridPane>
         <Label alignment="CENTER" layoutX="78.0" layoutY="7.0" text="PANEL LOGOWANIA" textAlignment="CENTER" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="75.0" AnchorPane.topAnchor="5.0">
@@ -28,7 +28,11 @@
             <Font name="System Bold" size="13.0" />
          </font></Label>
       <Label fx:id="loginErrorLabel" alignment="CENTER" layoutX="11.0" layoutY="25.0" prefHeight="32.0" prefWidth="270.0" text=" " textFill="#dd0b0b" wrapText="true" AnchorPane.leftAnchor="11.0" AnchorPane.rightAnchor="19.0" />
-      <Button fx:id="loginButton" defaultButton="true" layoutX="67.0" layoutY="143.0" mnemonicParsing="false" onAction="#handleLogin" text="Zaloguj" />
-      <Button fx:id="exitButton" layoutX="150.0" layoutY="143.0" mnemonicParsing="false" onAction="#handleExit" text="Wyjście" />
+        <Button fx:id="loginButton" defaultButton="true" layoutX="16.0" layoutY="143.0" mnemonicParsing="false"
+                onAction="#handleLogin" prefHeight="25.0" prefWidth="74.0" text="Zaloguj"/>
+        <Button fx:id="exitButton" layoutX="213.0" layoutY="143.0" mnemonicParsing="false" onAction="#handleExit"
+                prefHeight="25.0" prefWidth="74.0" text="Wyjście"/>
+        <Button fx:id="registerButton" layoutX="106.0" layoutY="143.0" mnemonicParsing="false"
+                onAction="#handleRegister" text="Zarejestruj"/>
     </children>
 </AnchorPane>

@@ -69,6 +69,22 @@ public class MainApp extends Application {
         }
     }
 
+    public void showRegisterView() {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(MainApp.class.getResource("/org/jeeclasses/movierental/jfxclient/view/RegisterView.fxml"));
+            AnchorPane loginView = loader.load();
+
+            rootLayout.setCenter(loginView);
+
+            RegisterViewController controller = loader.getController();
+            controller.setMainApp(this);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void showUserView() {
         try {
             FXMLLoader loader = new FXMLLoader();

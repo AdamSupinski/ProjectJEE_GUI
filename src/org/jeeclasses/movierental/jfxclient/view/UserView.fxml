@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
-<?import java.lang.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.jeeclasses.movierental.jfxclient.controller.UserViewController">
+<AnchorPane xmlns:fx="http://javafx.com/fxml/1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity"
+            minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8"
+            fx:controller="org.jeeclasses.movierental.jfxclient.controller.UserViewController">
     <children>
         <TableView fx:id="moviesTable" layoutY="66.0" prefHeight="335.0" prefWidth="600.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0">
             <columns>
@@ -22,6 +22,7 @@
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0"/>
                 <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
             </columnConstraints>
             <rowConstraints>
@@ -33,6 +34,8 @@
                 <Button fx:id="removeButton" mnemonicParsing="false" onAction="#handleRemove" prefWidth="95.0" text="Usuń" GridPane.columnIndex="2" />
                 <Button fx:id="detailsButton" mnemonicParsing="false" onAction="#handleDetails" prefWidth="95.0" text="Szczegóły" GridPane.columnIndex="3" />
                 <Button fx:id="rentButton" mnemonicParsing="false" onAction="#handleRent" prefHeight="25.0" prefWidth="95.0" text="Wypożycz " GridPane.columnIndex="4" />
+                <Button fx:id="logoutButton" mnemonicParsing="false" onAction="#handleLogout" prefWidth="95.0"
+                        text="Wyloguj" GridPane.columnIndex="5"/>
             </children>
         </GridPane>
     </children>

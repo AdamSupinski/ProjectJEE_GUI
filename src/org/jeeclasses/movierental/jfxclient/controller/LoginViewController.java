@@ -4,6 +4,7 @@ package org.jeeclasses.movierental.jfxclient.controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import org.jeeclasses.movierental.jfxclient.MainApp;
 import org.jeeclasses.movierental.jfxclient.model.Customer;
@@ -19,11 +20,14 @@ public class LoginViewController {
     @FXML
     private TextField loginTextField;
     @FXML
-    private TextField passwordTextField;
+    private PasswordField passwordTextField;
     @FXML
     private Button loginButton;
     @FXML
+    private Button registerButton;
+    @FXML
     private Label loginErrorLabel;
+
 
 
     @FXML
@@ -71,6 +75,11 @@ public class LoginViewController {
         /*
         loginErrorLabel.setText("Wprowadzono niepoprawne dane");
          */
+    }
+
+    @FXML
+    private void handleRegister() {
+        mainApp.showRegisterView();
     }
 
     @FXML

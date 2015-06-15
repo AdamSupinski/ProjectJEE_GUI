@@ -31,6 +31,8 @@ public class UserViewController {
     private Button detailsButton;
     @FXML
     private Button rentButton;
+    @FXML
+    private Button logoutButton;
 
     @FXML
     private TableView<ObservableMovie> moviesTable;
@@ -153,6 +155,12 @@ public class UserViewController {
 
         mainApp.showMovieRentDialog(selection.get(0));
 
+    }
+
+    @FXML
+    private void handleLogout() {
+        mainApp.setCustomer(null);
+        mainApp.showLoginView();
     }
 
     public void showAlertNoMoviesSelected() {
